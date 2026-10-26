@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<style>html{color-scheme:light}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Ghar Wapsi Chhath Fund</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap">
+<style>
+/* Layout: a single scroll from night-river to sunrise. Full-bleed colour bands, narrow reading column (~62ch), one sticky donate bar. */
+:root{
+  --bg:#fbf3e4;          /* warm sand of the ghat */
+  --bg2:#f3e4c8;
+  --fg:#2a1f1a;
+  --muted:#6b5a4c;
+  --saffron:#e8701a;     /* arghya sun */
+  --saffron2:#f5a623;
+  --vermilion:#b8321f;   /* sindoor */
+  --river:#1f6f78;       /* Ganga at dawn */
+  --indigo:#1b1a3a;      /* usha-kaal sky, night band */
+  --indigo2:#2d2a5c;
+  --card:#fffaf0;
+  --line:rgba(42,31,26,.14);
+  --display:'Yatra One','Tiro Devanagari Hindi',Georgia,serif;
+  --body:'Lora','Tiro Devanagari Hindi',Georgia,'Times New Roman',serif;
+  --hindi:'Tiro Devanagari Hindi','Lora',Georgia,serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#17162c; --bg2:#1f1d3a; --fg:#f4e9d6; --muted:#c3b39a; --card:#232041; --line:rgba(244,233,214,.16);
+  --saffron:#f28a2e; --saffron2:#ffc14d; --vermilion:#e2553d; --river:#3fa3ad; --indigo:#0d0c1d; --indigo2:#1b1a3a; color-scheme:dark } }
+:root[data-theme="dark"]{
+  --bg:#17162c; --bg2:#1f1d3a; --fg:#f4e9d6; --muted:#c3b39a; --card:#232041; --line:rgba(244,233,214,.16);
+  --saffron:#f28a2e; --saffron2:#ffc14d; --vermilion:#e2553d; --river:#3fa3ad; --indigo:#0d0c1d; --indigo2:#1b1a3a; color-scheme:dark }
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.65;margin:0;overflow-x:hidden}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.15;text-wrap:balance;margin:0}
+p{margin:0}
+.hi{font-family:var(--hindi)}
+.wrap{max-width:720px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band{padding-block:clamp(48px,8vw,96px)}
+.eyebrow{font-family:var(--body);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--saffron);font-weight:600}
+.flow>*+*{margin-top:1.1em}
+.lead{font-size:1.2rem}
+.quote{font-family:var(--hindi);font-size:1.55rem;line-height:1.45;color:var(--vermilion);border-left:3px solid var(--saffron);padding-left:1rem}
+.quote small{display:block;font-family:var(--body);font-size:.9rem;color:var(--muted);margin-top:.5rem}
+
+/* HERO: night river turning to dawn */
+.hero{background:linear-gradient(180deg,var(--indigo) 0%,var(--indigo2) 45%,#7a2e3a 72%,var(--saffron) 100%);color:#fff6e8;position:relative;overflow:hidden;padding-block:0}
+.hero .wrap{position:relative;z-index:2;padding-block:clamp(40px,7vw,80px) 0;text-align:center}
+.hero h1{font-size:clamp(2.4rem,7.5vw,4.6rem);color:#fff6e8;text-shadow:0 2px 24px rgba(0,0,0,.35)}
+.hero .sub{font-family:var(--hindi);font-size:clamp(1.15rem,3vw,1.5rem);color:#ffd9a3;margin-top:.8rem}
+.hero .en{font-size:1.05rem;color:#f4e2c9;margin-top:1.4rem;max-width:56ch;margin-inline:auto}
+.hero svg.scene{display:block;width:100%;height:auto;max-width:100%;margin-top:1.5rem}
+.stars{position:absolute;inset:0;z-index:1;background-image:radial-gradient(1px 1px at 12% 18%,#fff 60%,transparent),radial-gradient(1px 1px at 30% 8%,#fff 60%,transparent),radial-gradient(1.5px 1.5px at 55% 22%,#ffe9b5 60%,transparent),radial-gradient(1px 1px at 72% 12%,#fff 60%,transparent),radial-gradient(1px 1px at 88% 28%,#fff 60%,transparent),radial-gradient(1px 1px at 42% 32%,#fff 60%,transparent),radial-gradient(1.5px 1.5px at 8% 40%,#ffe9b5 60%,transparent),radial-gradient(1px 1px at 65% 38%,#fff 60%,transparent);opacity:.8}
+.sun{animation:rise 6s ease-out both}
+@keyframes rise{from{transform:translateY(60px);opacity:.2}to{transform:translateY(0);opacity:1}}
+.flame{transform-origin:50% 100%;animation:flicker 1.6s ease-in-out infinite alternate}
+.flame.f2{animation-duration:1.9s;animation-delay:.4s}
+.flame.f3{animation-duration:1.4s;animation-delay:.8s}
+@keyframes flicker{from{transform:scaleY(1) scaleX(1)}to{transform:scaleY(1.18) scaleX(.92)}}
+@media (prefers-reduced-motion:reduce){.sun,.flame{animation:none}}
+
+/* Story band */
+.story{background:var(--bg)}
+.story .wrap{max-width:680px}
+
+/* Stat tiles */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin-top:2rem}
+.tile{background:var(--card);border:1px solid var(--line);padding:18px 18px 16px;border-radius:6px}
+.tile b{display:block;font-family:var(--display);font-size:2rem;color:var(--saffron);font-variant-numeric:tabular-nums;line-height:1.1}
+.tile span{font-size:.9rem;color:var(--muted)}
+.tile .hi{display:block;margin-top:.35rem;font-size:1rem;color:var(--fg)}
+
+/* Chhath icons band */
+.rituals{background:var(--bg2)}
+.icons{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px;margin-top:2rem}
+.icon{text-align:center}
+.icon svg{width:96px;height:96px;display:block;margin:0 auto .6rem}
+.icon h3{font-size:1.25rem;color:var(--vermilion)}
+.icon p{font-size:.92rem;color:var(--muted);margin-top:.3rem}
+
+/* Progress + donate */
+.donate{background:linear-gradient(180deg,var(--bg2),var(--bg))}
+.goal{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:clamp(20px,4vw,32px)}
+.goal .row{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;align-items:baseline}
+.goal .big{font-family:var(--display);font-size:clamp(1.9rem,5vw,2.6rem);color:var(--vermilion);font-variant-numeric:tabular-nums}
+.goal .of{color:var(--muted);font-variant-numeric:tabular-nums}
+.bar{height:14px;background:var(--line);border-radius:7px;overflow:hidden;margin:14px 0 8px}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--saffron),var(--saffron2));transition:width 1.4s ease}
+.meta{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:.9rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.ticket{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:1.4rem}
+.ticket div{background:var(--bg2);border-radius:6px;padding:14px;min-width:0}
+.ticket .amt{display:block;font-family:var(--display);font-size:1.6rem;color:var(--saffron);font-variant-numeric:tabular-nums}
+.ticket .lab{font-size:.85rem;color:var(--muted)}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:1.6rem}
+.btn{appearance:none;border:0;cursor:pointer;font-family:var(--body);font-weight:600;font-size:1rem;padding:14px 22px;border-radius:999px;background:var(--saffron);color:#1d1308;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+.btn:hover{background:var(--saffron2)}
+.btn.ghost{background:transparent;color:var(--fg);border:1.5px solid var(--saffron)}
+.btn:focus-visible,.chip:focus-visible{outline:3px solid var(--river);outline-offset:2px}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-top:1rem}
+.chip{border:1.5px solid var(--line);background:var(--card);color:var(--fg);border-radius:999px;padding:8px 16px;font-family:var(--body);font-size:.95rem;cursor:pointer;font-variant-numeric:tabular-nums}
+.chip[aria-pressed="true"]{background:var(--vermilion);border-color:var(--vermilion);color:#fff}
+.chip small{display:block;font-size:.72rem;opacity:.75}
+.pay{margin-top:1.6rem;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+.pay .upi{background:var(--bg2);border:1px dashed var(--saffron);border-radius:6px;padding:12px 14px;min-width:0}
+.pay .upi .lab{font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.pay .upi code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:1.05rem;word-break:break-all;color:var(--fg)}
+.qr{background:#fff;border-radius:6px;padding:8px;width:132px;height:132px;display:grid;place-items:center;border:1px solid var(--line)}
+.qr span{font-size:.7rem;text-align:center;color:#555;line-height:1.3}
+.note{font-size:.88rem;color:var(--muted);margin-top:1rem}
+.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--indigo);color:#fff6e8;padding:10px 18px;border-radius:999px;font-size:.9rem;opacity:0;pointer-events:none;transition:opacity .3s;z-index:30}
+.toast.show{opacity:1}
+
+/* Voices */
+.voices{background:var(--bg)}
+.voice{display:grid;grid-template-columns:56px 1fr;gap:16px;padding:18px 0;border-top:1px solid var(--line)}
+.voice:last-child{border-bottom:1px solid var(--line)}
+.voice .av{width:56px;height:56px;border-radius:50%;background:var(--indigo2);display:grid;place-items:center;font-family:var(--display);color:#ffd9a3;font-size:1.3rem}
+.voice p{min-width:0}
+.voice .who{font-size:.85rem;color:var(--muted);margin-top:.4rem}
+.voice .hi{font-size:1.1rem}
+
+/* Closing sunrise */
+.close{background:linear-gradient(180deg,var(--bg) 0%,var(--saffron2) 55%,var(--saffron) 100%);text-align:center;color:#2a1f1a;padding-bottom:140px}
+.close h2{font-size:clamp(2rem,6vw,3.2rem);color:var(--vermilion)}
+.close .hi{font-size:1.3rem;margin-top:1rem;color:#3a2418}
+.close svg{display:block;max-width:100%;width:100%;height:auto;margin:1.5rem auto 0}
+
+/* Sticky donate bar */
+.stick{position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--indigo);color:#fff6e8;padding-top:10px;padding-bottom:calc(10px + env(safe-area-inset-bottom,0px));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));box-shadow:0 -6px 24px rgba(0,0,0,.25)}
+.stick .in{max-width:720px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.stick .t{font-family:var(--hindi);font-size:1rem;min-width:0}
+.stick .t small{display:block;font-family:var(--body);font-size:.8rem;color:#ffd9a3}
+.stick .btn{padding:11px 18px;flex-shrink:0}
+@media (max-width:460px){.stick .t small{display:none}.pay{grid-template-columns:1fr}.qr{justify-self:start}}
+footer{background:var(--indigo);color:#c9bfae;font-size:.85rem;padding-block:28px 24px;text-align:center}
+footer a{color:#ffd9a3}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero band">
+  <div class="stars" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow" style="color:#ffd9a3">छठ महापर्व · कार्तिक शुक्ल षष्ठी · 2026</p>
+    <h1>हर घर दीया जले,<br>हर बेटा-बेटी घर पहुँचे।</h1>
+    <p class="sub hi">"छठी मइया के घाट पर माई इंतज़ार में खड़ी है…<br>और उसके बच्चे टिकट के दाम देख कर चुप हैं।"</p>
+    <p class="en">Thousands of Bihari sons and daughters working far from home want to stand at their own ghat this Chhath. Flight fares have tripled. We are raising funds so that no son, no daughter has to tell their mother, "Is saal nahi aa paayenge."</p>
+  </div>
+  <svg class="scene" viewBox="0 0 1200 420" role="img" aria-label="Women standing in a river at dawn, offering arghya to the rising sun, with diyas floating on the water">
+    <defs>
+      <radialGradient id="sunG" cx="50%" cy="50%" r="50%"><stop offset="0" stop-color="#fff3c4"/><stop offset=".55" stop-color="#ffb347"/><stop offset="1" stop-color="#ff7a1a" stop-opacity=".0"/></radialGradient>
+      <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7a4a3a"/><stop offset=".4" stop-color="#2b5a66"/><stop offset="1" stop-color="#143840"/></linearGradient>
+      <linearGradient id="glow" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffb347" stop-opacity=".7"/><stop offset="1" stop-color="#ffb347" stop-opacity="0"/></linearGradient>
+    </defs>
+    <g class="sun">
+      <circle cx="600" cy="230" r="150" fill="url(#sunG)" opacity=".8"/>
+      <circle cx="600" cy="230" r="70" fill="#ffd27a"/>
+    </g>
+    <!-- far bank + temple -->
+    <path d="M0 240 L1200 240 L1200 250 L0 250Z" fill="#3b1f28"/>
+    <path d="M80 240 l0 -30 l14 0 l0 -24 l6 -20 l6 20 l0 24 l14 0 l0 30Z" fill="#2a1420"/>
+    <path d="M1040 240 l0 -26 l12 0 l0 -18 l6 -16 l6 16 l0 18 l12 0 l0 26Z" fill="#2a1420"/>
+    <!-- water -->
+    <rect x="0" y="248" width="1200" height="172" fill="url(#water)"/>
+    <rect x="520" y="248" width="160" height="172" fill="url(#glow)"/>
+    <g stroke="#ffd27a" stroke-opacity=".35" stroke-width="2" fill="none">
+      <path d="M540 290 q30 6 60 0 t60 0"/><path d="M560 330 q25 5 50 0 t50 0"/><path d="M585 370 q20 4 40 0 t40 0"/>
+    </g>
+    <!-- women in water, offering arghya -->
+    <g fill="#1b0f14">
+      <!-- figure 1 -->
+      <path d="M330 350 c0 -40 10 -70 30 -90 l-6 -22 c-4 -14 2 -26 14 -28 c12 2 18 14 14 28 l-6 22 c20 20 30 50 30 90 Z"/>
+      <path d="M352 236 l-30 -40 l6 -4 l30 40 Z"/><path d="M384 236 l30 -40 l-6 -4 l-30 40 Z"/>
+      <!-- figure 2 (centre) -->
+      <path d="M560 350 c0 -46 12 -78 34 -100 l-7 -24 c-4 -15 3 -28 16 -30 c13 2 20 15 16 30 l-7 24 c22 22 34 54 34 100 Z"/>
+      <path d="M585 226 l-34 -46 l7 -4 l34 46 Z"/><path d="M621 226 l34 -46 l-7 -4 l-34 46 Z"/>
+      <!-- figure 3 -->
+      <path d="M800 350 c0 -40 10 -70 30 -90 l-6 -22 c-4 -14 2 -26 14 -28 c12 2 18 14 14 28 l-6 22 c20 20 30 50 30 90 Z"/>
+      <path d="M822 236 l-30 -40 l6 -4 l30 40 Z"/><path d="M854 236 l30 -40 l-6 -4 l-30 40 Z"/>
+    </g>
+    <!-- soop / lota in raised hands -->
+    <g fill="#c98a3a"><ellipse cx="353" cy="194" rx="22" ry="7"/><ellipse cx="588" cy="178" rx="26" ry="8"/><ellipse cx="823" cy="194" rx="22" ry="7"/></g>
+    <!-- sari drape colour -->
+    <g fill="#b8321f" opacity=".85"><path d="M330 350 c0 -30 6 -55 18 -75 l10 10 c-6 18 -8 40 -8 65Z"/><path d="M560 350 c0 -34 8 -62 20 -84 l12 12 c-8 20 -10 44 -10 72Z"/><path d="M800 350 c0 -30 6 -55 18 -75 l10 10 c-6 18 -8 40 -8 65Z"/></g>
+    <!-- floating diyas -->
+    <g>
+      <ellipse cx="200" cy="390" rx="22" ry="9" fill="#a0522d"/><path class="flame" d="M200 382 c-6 -8 -5 -16 0 -22 c5 6 6 14 0 22Z" fill="#ffd27a"/>
+      <ellipse cx="460" cy="400" rx="22" ry="9" fill="#a0522d"/><path class="flame f2" d="M460 392 c-6 -8 -5 -16 0 -22 c5 6 6 14 0 22Z" fill="#ffd27a"/>
+      <ellipse cx="720" cy="396" rx="22" ry="9" fill="#a0522d"/><path class="flame f3" d="M720 388 c-6 -8 -5 -16 0 -22 c5 6 6 14 0 22Z" fill="#ffd27a"/>
+      <ellipse cx="980" cy="392" rx="22" ry="9" fill="#a0522d"/><path class="flame f2" d="M980 384 c-6 -8 -5 -16 0 -22 c5 6 6 14 0 22Z" fill="#ffd27a"/>
+    </g>
+    <!-- reflections -->
+    <g fill="#ffd27a" opacity=".25"><ellipse cx="200" cy="408" rx="10" ry="3"/><ellipse cx="460" cy="416" rx="10" ry="3"/><ellipse cx="720" cy="412" rx="10" ry="3"/><ellipse cx="980" cy="408" rx="10" ry="3"/></g>
+  </svg>
+</section>
+
+<!-- STORY -->
+<section class="story band">
+  <div class="wrap flow">
+    <p class="eyebrow">Why we are asking</p>
+    <h2 style="font-size:clamp(1.8rem,4.5vw,2.6rem)">Chhath is not a holiday. It is a homecoming.</h2>
+    <p class="lead">For a Bihari, Chhath is the one week in the year when the whole family stands together, knee-deep in cold water, waiting for the sun. Nahay Khay, Kharna, Sandhya Arghya, Usha Arghya. Four days that a mother keeps fasting for, without even a drop of water on the last night, while she waits for her children to come home.</p>
+    <p>This year, many of our brothers and sisters working in Bengaluru, Hyderabad, Pune, Mumbai and Delhi are trying to go home. Trains were waitlisted months ago. And the only way left, the flight to Patna, Darbhanga or Gaya, now costs more than a month's salary for a security guard, a delivery partner, a housekeeping worker, a junior cook.</p>
+    <p class="quote">"माई फोन पर पूछती है, कब आ रहे हो? मैं कहता हूँ, देख रहा हूँ टिकट। सच बोलने की हिम्मत नहीं होती।"
+      <small>Ramesh, 27, works at a warehouse in Bengaluru. Home is a village near Chhapra.</small></p>
+    <p>We are a group of friends from Bihar living in these cities. We have made a list of people who have asked for help. We check each one. We book the ticket in their name directly, so the money goes only to the fare. Nothing else.</p>
+
+    <div class="tiles">
+      <div class="tile"><b>₹18,500</b><span>Bengaluru → Patna, one way, this week</span><span class="hi">पिछले महीने यही टिकट ₹5,200 का था</span></div>
+      <div class="tile"><b>3.5×</b><span>fare increase in the Chhath week</span><span class="hi">तनख़्वाह वही, किराया तीन गुना</span></div>
+      <div class="tile"><b data-count="people">42</b><span>people on our list who still have no ticket</span><span class="hi">बयालीस घरों में एक थाली खाली, बेटे की या बेटी की</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- RITUALS -->
+<section class="rituals band">
+  <div class="wrap">
+    <p class="eyebrow">What they are going home for</p>
+    <h2 style="font-size:clamp(1.7rem,4vw,2.3rem)">चार दिन, जो साल भर की थकान धो देते हैं</h2>
+    <div class="icons">
+      <div class="icon">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="56" r="22" fill="#f5a623"/><path d="M12 62 h76" stroke="#1f6f78" stroke-width="6" stroke-linecap="round"/><path d="M18 74 h64" stroke="#1f6f78" stroke-width="4" stroke-linecap="round" opacity=".6"/><g stroke="#e8701a" stroke-width="3" stroke-linecap="round"><path d="M50 20v10"/><path d="M26 30l6 7"/><path d="M74 30l-6 7"/></g></svg>
+        <h3>नहाय-खाय</h3><p>Day 1. A dip in the river, and the house is scrubbed clean. Kaddu-bhaat is cooked on a mud stove.</p>
+      </div>
+      <div class="icon">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><ellipse cx="50" cy="66" rx="34" ry="12" fill="#a0522d"/><ellipse cx="50" cy="62" rx="30" ry="9" fill="#c98a3a"/><circle cx="40" cy="60" r="6" fill="#8b4a1e"/><circle cx="56" cy="58" r="6" fill="#8b4a1e"/><circle cx="48" cy="64" r="5" fill="#8b4a1e"/><path d="M50 48 c-7 -9 -6 -18 0 -24 c6 6 7 15 0 24Z" fill="#f5a623"/></svg>
+        <h3>खरना</h3><p>Day 2. Gur ki kheer and rotis, eaten once at dusk. After this, the vrati will not touch water for 36 hours.</p>
+      </div>
+      <div class="icon">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><path d="M20 70 L80 70 L72 42 L28 42Z" fill="#c98a3a"/><path d="M28 42 L72 42" stroke="#8b4a1e" stroke-width="3"/><circle cx="42" cy="56" r="5" fill="#b8321f"/><circle cx="58" cy="56" r="5" fill="#f5a623"/><circle cx="50" cy="60" r="4" fill="#7cb342"/><path d="M50 30 c8 0 12 6 12 12 h-24 c0 -6 4 -12 12 -12Z" fill="#e8701a"/></svg>
+        <h3>संध्या अर्घ्य</h3><p>Day 3. The soop filled with thekua, sugarcane, bananas and coconut, lifted to the setting sun.</p>
+      </div>
+      <div class="icon">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><rect x="0" y="60" width="100" height="40" fill="#1f6f78" opacity=".5"/><circle cx="50" cy="60" r="20" fill="#e8701a"/><path d="M0 60 h100" stroke="#1b1a3a" stroke-width="3"/><path d="M38 95 c0 -14 4 -24 12 -30 c8 6 12 16 12 30Z" fill="#1b1a3a"/></svg>
+        <h3>उषा अर्घ्य</h3><p>Day 4. Before sunrise, the family stands in the water again. When the sun comes up, the fast ends. Everyone is home.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DONATE -->
+<section class="donate band" id="donate">
+  <div class="wrap">
+    <p class="eyebrow">Our target</p>
+    <h2 style="font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:1.4rem">एक टिकट, एक घर, एक पूरी छठ</h2>
+    <div class="goal">
+      <div class="row"><span class="big" id="raised">₹0</span><span class="of">raised of <strong id="goal">₹0</strong></span></div>
+      <div class="bar"><i id="barfill"></i></div>
+      <div class="meta"><span><strong id="tickets">0</strong> tickets booked</span><span><strong id="donors">0</strong> people have given</span><span id="daysleft"></span></div>
+
+      <div class="ticket">
+        <div><span class="amt">₹9,500</span><span class="lab">Average one-way fare we are paying per person</span></div>
+        <div><span class="amt">₹500</span><span class="lab">Smallest gift. Fifty people giving ₹500 sends two people home.</span></div>
+      </div>
+
+      <p style="margin-top:1.6rem;font-weight:600">Choose an amount</p>
+      <div class="chips" role="group" aria-label="Donation amount">
+        <button class="chip" type="button" data-amt="500">₹500<small>Thekua for the journey</small></button>
+        <button class="chip" type="button" data-amt="2000">₹2,000<small>Airport cab + meal</small></button>
+        <button class="chip" type="button" data-amt="5000" aria-pressed="true">₹5,000<small>Half a ticket</small></button>
+        <button class="chip" type="button" data-amt="9500">₹9,500<small>One full ticket home</small></button>
+      </div>
+
+      <div class="pay">
+        <div class="upi">
+          <div class="lab">Pay by UPI (GPay · PhonePe · Paytm · BHIM)</div>
+          <code id="upiid">yourname@upi</code>
+          <div class="lab" style="margin-top:6px;text-transform:none;letter-spacing:0">Add note: <em>Chhath ticket</em> so we can tag it.</div>
+        </div>
+        <div class="qr" id="qrbox"><span>Place your<br>UPI QR<br>image here</span></div>
+      </div>
+
+      <div class="cta">
+        <button class="btn" type="button" id="copyupi">Copy UPI ID</button>
+        <a class="btn ghost" id="upilink" href="#">Open UPI app</a>
+        <button class="btn ghost" type="button" id="sharebtn">Share this page</button>
+      </div>
+      <p class="note">Every rupee is used only for fares. We post the booked PNRs (names hidden) in our WhatsApp group every evening. Any amount left after Chhath is given to the next person on the list for their return journey.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VOICES -->
+<section class="voices band">
+  <div class="wrap">
+    <p class="eyebrow">From our list</p>
+    <h2 style="font-size:clamp(1.7rem,4vw,2.3rem);margin-bottom:1.6rem">जिनके लिए हम माँग रहे हैं</h2>
+    <div class="voice"><div class="av">सु</div><div><p class="hi">"बाबूजी नहीं रहे पिछले साल। अब माई अकेले घाट पर जाएगी। मैं नहीं गया तो सूप कौन उठाएगा?"</p><p class="who">Sunil, 31, housekeeping staff, Hyderabad. Home: Madhubani. Fare quoted: ₹14,200.</p></div></div>
+    <div class="voice"><div class="av">पू</div><div><p class="hi">"बेटी पहली बार छठ करेगी। मैं नहीं पहुँची तो उसे अर्घ्य कौन सिखाएगा?"</p><p class="who">Pooja, 34, cook in Pune. Home: Buxar. Fare quoted: ₹11,800 via Patna.</p></div></div>
+    <div class="voice"><div class="av">अ</div><div><p class="hi">"तीन साल से नहीं गया। इस बार सोचा था पक्का जाऊँगा। टिकट देखा तो बैठ गया।"</p><p class="who">Anil, 24, delivery partner, Bengaluru. Home: Siwan. Fare quoted: ₹18,500.</p></div></div>
+    <div class="voice"><div class="av">मं</div><div><p class="hi">"माई ने कहा, मत आओ, पैसे बचाओ। फोन रखने के बाद उसकी आवाज़ भारी थी।"</p><p class="who">Manoj, 29, security guard, Gurugram. Home: Samastipur. Fare quoted: ₹9,900 to Darbhanga.</p></div></div>
+    <p class="note" style="margin-top:1.2rem">Names changed. Each person has shared their fare screenshot and ID with our volunteers.</p>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="close band">
+  <div class="wrap">
+    <h2>उगऽ हे सूरज देव, भइल अरघ के बेर</h2>
+    <p class="hi">इस छठ, किसी माई की थाली खाली न रहे।<br>एक टिकट दीजिए। एक बेटा या बेटी घर पहुँचेगी।</p>
+    <svg viewBox="0 0 800 160" aria-hidden="true">
+      <circle cx="400" cy="130" r="80" fill="#fff0c2" opacity=".9"/>
+      <circle cx="400" cy="130" r="52" fill="#ffd27a"/>
+      <path d="M0 130 h800" stroke="#b8321f" stroke-width="4"/>
+      <g fill="#2a1f1a"><path d="M300 130 c0 -22 6 -38 16 -48 c10 10 16 26 16 48Z"/><path d="M372 130 c0 -26 7 -44 20 -56 c13 12 20 30 20 56Z"/><path d="M466 130 c0 -22 6 -38 16 -48 c10 10 16 26 16 48Z"/><path d="M240 130 c0 -16 4 -28 12 -36 c8 8 12 20 12 36Z"/><path d="M536 130 c0 -16 4 -28 12 -36 c8 8 12 20 12 36Z"/></g>
+    </svg>
+    <div class="cta" style="justify-content:center;margin-top:1.8rem"><a class="btn" href="#donate">Give a ticket home</a></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Organised by friends from Bihar living in Bengaluru, Hyderabad, Pune, Mumbai and Delhi. Questions or want to be added to the list? Write to <a id="mail" href="#">your-email@example.com</a> · WhatsApp <span id="wa">+91 XXXXX XXXXX</span><br>जय छठी मइया 🙏</div>
+</footer>
+
+<div class="stick"><div class="in"><div class="t">बेटा हो या बेटी, घाट तक पहुँचा दीजिए<small>Every ₹9,500 books one ticket home.</small></div><a class="btn" href="#donate">Donate</a></div></div>
+<div class="toast" id="toast">Copied</div>
+
+<script>
+/* ===== EDIT THESE before sharing ===== */
+const CONFIG = {
+  upiId: "yourname@upi",          // your real UPI ID
+  payeeName: "Chhath Ghar Wapsi Fund",
+  goal: 400000,                   // target in rupees
+  raised: 0,                      // update as donations come in
+  ticketsBooked: 0,
+  donors: 0,
+  peopleWaiting: 42,
+  deadline: "2026-11-14",         // Nahay Khay 2026 (adjust to your date)
+  email: "your-email@example.com",
+  whatsapp: "+91 XXXXX XXXXX"
+};
+/* ===================================== */
+const inr = n => "₹" + Number(n).toLocaleString("en-IN");
+document.getElementById("goal").textContent = inr(CONFIG.goal);
+document.getElementById("raised").textContent = inr(CONFIG.raised);
+document.getElementById("tickets").textContent = CONFIG.ticketsBooked;
+document.getElementById("donors").textContent = CONFIG.donors;
+document.getElementById("upiid").textContent = CONFIG.upiId;
+document.querySelector('[data-count="people"]').textContent = CONFIG.peopleWaiting;
+const m = document.getElementById("mail"); m.textContent = CONFIG.email; m.href = "mailto:" + CONFIG.email;
+document.getElementById("wa").textContent = CONFIG.whatsapp;
+const days = Math.ceil((new Date(CONFIG.deadline) - new Date()) / 86400000);
+document.getElementById("daysleft").textContent = days > 0 ? days + " days to Nahay Khay" : "Chhath week";
+requestAnimationFrame(() => { document.getElementById("barfill").style.width = Math.min(100, CONFIG.goal ? CONFIG.raised / CONFIG.goal * 100 : 0) + "%"; });
+
+let amount = 5000;
+const upiLink = document.getElementById("upilink");
+function setLink(){ upiLink.href = "upi://pay?pa=" + encodeURIComponent(CONFIG.upiId) + "&pn=" + encodeURIComponent(CONFIG.payeeName) + "&am=" + amount + "&cu=INR&tn=" + encodeURIComponent("Chhath ticket"); }
+setLink();
+document.querySelectorAll(".chip").forEach(c => c.addEventListener("click", () => {
+  document.querySelectorAll(".chip").forEach(x => x.setAttribute("aria-pressed","false"));
+  c.setAttribute("aria-pressed","true"); amount = +c.dataset.amt; setLink();
+}));
+const toast = document.getElementById("toast");
+function say(t){ toast.textContent = t; toast.classList.add("show"); setTimeout(() => toast.classList.remove("show"), 1800); }
+document.getElementById("copyupi").addEventListener("click", () => {
+  const txt = CONFIG.upiId;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(txt).then(() => say("UPI ID copied")).catch(() => selectUpi());
+  } else selectUpi();
+});
+function selectUpi(){ const r = document.createRange(); r.selectNodeContents(document.getElementById("upiid")); const s = getSelection(); s.removeAllRanges(); s.addRange(r); say("Select and copy the UPI ID"); }
+document.getElementById("sharebtn").addEventListener("click", () => {
+  const url = location.href;
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(() => say("Link copied. Share it on WhatsApp.")).catch(() => say(url));
+  else say(url);
+});
+</script>
+
+</body>
+</html>
