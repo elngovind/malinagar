@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="hi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Malinagar ki Kheti</title>
+<meta name="description" content="What Malinagar grows: every crop by season, the varieties, how each is sown, watered and harvested, the farming calendar, and the words of the field.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Yatra+One&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap">
+<style>
+:root{--bg:#fbf3e4;--bg2:#f3e4c8;--fg:#2a1f1a;--muted:#6b5a4c;--saffron:#e8701a;--saffron2:#f5a623;--vermilion:#b8321f;--river:#1f6f78;--river2:#3fa3ad;--leaf:#4f7d2b;--mango:#f2b134;--indigo:#1b1a3a;--indigo2:#2d2a5c;--card:#fffaf0;--line:rgba(42,31,26,.14);
+--display:'Yatra One','Tiro Devanagari Hindi',Georgia,serif;--body:'Lora','Tiro Devanagari Hindi',Georgia,'Times New Roman',serif;--hindi:'Tiro Devanagari Hindi','Lora',Georgia,serif}
+@media (prefers-color-scheme:dark){:root{--bg:#17162c;--bg2:#1f1d3a;--fg:#f4e9d6;--muted:#c3b39a;--card:#232041;--line:rgba(244,233,214,.16);--saffron:#f28a2e;--saffron2:#ffc14d;--vermilion:#e2553d;--river:#3fa3ad;--river2:#6cc3cc;--leaf:#7fb04e;--indigo:#0d0c1d;--indigo2:#1b1a3a;color-scheme:dark}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.65;margin:0;overflow-x:hidden}
+img{max-width:100%}h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.15;text-wrap:balance;margin:0}
+h2{font-size:clamp(1.7rem,4.2vw,2.4rem)}h3{font-size:1.35rem;color:var(--vermilion)}p{margin:0}a{color:var(--vermilion)}.hi{font-family:var(--hindi)}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.band{padding-block:clamp(44px,7vw,80px)}.alt{background:var(--bg2)}
+.eyebrow{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--saffron);font-weight:600}
+.lead{font-size:1.15rem;max-width:64ch;margin-top:.6rem}.flow>*+*{margin-top:1.1em}.note{font-size:.88rem;color:var(--muted)}
+nav{position:sticky;top:0;z-index:30;background:var(--indigo);color:#fff6e8;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));box-shadow:0 4px 20px rgba(0,0,0,.25)}
+nav .in{max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:16px;min-height:54px}
+nav .brand{font-family:var(--display);font-size:1.15rem;color:#ffd9a3;text-decoration:none;white-space:nowrap}
+nav ul{list-style:none;margin:0;padding:0;display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}nav ul::-webkit-scrollbar{display:none}
+nav a.l{color:#f4e2c9;text-decoration:none;font-size:.88rem;padding:8px 10px;border-radius:999px;white-space:nowrap}nav a.l:hover{background:var(--indigo2)}nav a.l.on{background:var(--saffron);color:#1d1308}
+.hero{background:linear-gradient(180deg,var(--indigo) 0%,#1f6f78 45%,#4f7d2b 80%,#f2b134 100%);color:#fff6e8;position:relative;overflow:hidden}
+.hero .wrap{position:relative;z-index:2;padding-block:clamp(40px,7vw,80px) 0;text-align:center}
+.hero h1{font-size:clamp(2.4rem,7.5vw,4.4rem);color:#fff6e8;text-shadow:0 2px 24px rgba(0,0,0,.35)}
+.hero .sub{font-family:var(--hindi);font-size:clamp(1.15rem,3vw,1.5rem);color:#ffd9a3;margin-top:.8rem}
+.hero .en{font-size:1.05rem;color:#f4e2c9;margin-top:1.4rem;max-width:58ch;margin-inline:auto}
+.hero svg.scene{display:block;width:100%;height:auto;margin-top:1.4rem}
+.stars{position:absolute;inset:0;z-index:1;background-image:radial-gradient(1px 1px at 12% 18%,#fff 60%,transparent),radial-gradient(1px 1px at 30% 8%,#fff 60%,transparent),radial-gradient(1.5px 1.5px at 55% 22%,#ffe9b5 60%,transparent),radial-gradient(1px 1px at 72% 12%,#fff 60%,transparent);opacity:.7}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:1.8rem}
+.tile{background:var(--card);border:1px solid var(--line);padding:16px;border-radius:6px}.tile b{display:block;font-family:var(--display);font-size:1.8rem;color:var(--saffron);line-height:1.1}.tile span{font-size:.88rem;color:var(--muted)}
+.jump{display:flex;gap:8px;overflow-x:auto;padding:10px 0;margin-top:1.2rem}.jump a{flex:0 0 auto;text-decoration:none;color:var(--fg);background:var(--card);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:.9rem;white-space:nowrap}
+.crops{display:grid;gap:16px;margin-top:1.6rem}
+.crop{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:20px;min-width:0}
+.ch{display:grid;grid-template-columns:64px 1fr;gap:14px;align-items:center}.ch .hin{font-family:var(--hindi);color:var(--muted);font-size:1.05rem}
+.ico{width:64px;height:64px;border-radius:8px;display:grid;place-items:center}.ico svg{width:48px;height:48px}
+.bg-sun{background:linear-gradient(160deg,#ffd27a,#e8701a)}.bg-river{background:linear-gradient(160deg,#3fa3ad,#1f6f78)}.bg-leaf{background:linear-gradient(160deg,#7fb04e,#4f7d2b)}.bg-sand{background:linear-gradient(160deg,#f5e6c8,#c98a3a)}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:10px 18px;margin:1rem 0 0}.facts div{min-width:0}.facts dt{font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;color:var(--saffron);font-weight:600}.facts dd{margin:2px 0 0;font-size:.95rem}
+@media (max-width:560px){.facts{grid-template-columns:1fr}}
+details{margin-top:.9rem;border-top:1px solid var(--line);padding-top:.6rem}summary{cursor:pointer;font-weight:600;color:var(--vermilion)}
+.steps{margin:.6rem 0 0;padding:0 0 0 1.2rem}.steps li{margin:.35rem 0;font-size:.97rem}
+.use{margin-top:.9rem;font-size:.95rem;background:var(--bg2);border-radius:6px;padding:10px 12px}
+.cal-wrap{overflow-x:auto;margin-top:1.6rem;border:1px solid var(--line);border-radius:8px;background:var(--card)}
+table.cal{border-collapse:collapse;table-layout:fixed;min-width:860px;width:100%;font-size:.8rem}
+.cal th{font-weight:500;padding:8px 4px;text-align:center;color:var(--muted);border-bottom:1px solid var(--line);white-space:nowrap;line-height:1.3}.cal thead th:first-child{width:150px}
+.cal th .hi{color:var(--vermilion);font-size:.95rem}.cal th small{font-size:.7rem}
+.cal tbody th{text-align:left;color:var(--fg);font-family:var(--display);font-size:.95rem;white-space:nowrap;padding-left:12px}
+.cal td{height:34px;padding:0;border-left:1px dashed var(--line)}.cal tbody tr{border-bottom:1px solid var(--line)}
+.cal td.ks{background:var(--river2)}.cal td.kg{background:var(--leaf);opacity:.55}.cal td.kh{background:var(--saffron)}.cal td.kn{background:var(--river2);opacity:.5}.cal td.kf{background:var(--mango)}
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin-top:.8rem;font-size:.85rem;color:var(--muted)}.legend i{display:inline-block;width:14px;height:14px;border-radius:3px;vertical-align:-2px;margin-right:5px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px;margin-top:1.6rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:8px;padding:16px 18px;min-width:0}.card h3{font-size:1.15rem}.card p{font-size:.95rem;margin-top:.4rem}
+.gloss{columns:2;column-gap:28px;margin-top:1.4rem}@media (max-width:600px){.gloss{columns:1}}
+.gloss div{break-inside:avoid;padding:6px 0;border-bottom:1px solid var(--line);font-size:.95rem}.gloss b{font-family:var(--hindi);font-weight:400;color:var(--vermilion);font-size:1.05rem}
+.close{background:linear-gradient(180deg,var(--bg) 0%,var(--mango) 55%,var(--saffron) 100%);text-align:center;color:#2a1f1a}
+.close h2{color:var(--vermilion)}.close .hi{font-size:1.3rem;margin-top:1rem;color:#3a2418}
+.btn{font-family:var(--body);font-weight:600;font-size:1rem;padding:14px 22px;border-radius:999px;background:var(--indigo);color:#fff6e8;text-decoration:none;display:inline-flex;margin-top:1.6rem}
+footer{background:var(--indigo);color:#c9bfae;font-size:.85rem;padding-block:28px 24px;text-align:center}footer a{color:#ffd9a3}
+</style>
+</head>
+<body>
+<nav><div class="in"><a class="brand" href="index.html">मलीनगर</a><ul>
+<li><a class="l" href="index.html#gaon">Gaon</a></li><li><a class="l" href="index.html#heritage">Heritage</a></li><li><a class="l" href="index.html#kahani">Kahaniyan</a></li><li><a class="l" href="parv.html">Parv</a></li><li><a class="l on" href="kheti.html">Kheti</a></li><li><a class="l" href="index.html#gallery">Gallery</a></li><li><a class="l" href="chhath.html">Chhath Fund</a></li></ul></div></nav>
+
+<section class="hero">
+  <div class="stars" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="eyebrow" style="color:#ffd9a3">मलीनगर · खेती-बाड़ी · बूढ़ी गंडक की मिट्टी</p>
+    <h1>खेती-बाड़ी<br><span style="font-size:.55em;display:block;margin-top:.3em">What our soil grows</span></h1>
+    <p class="sub hi">"हम अपने ही खेत के अन्न पर जी सकते हैं।"</p>
+    <p class="en">Malinagar sits on the silt the Budhi Gandak and the Bagmati have been laying down for ten thousand years. Three seasons, twenty-odd crops, the gachhi and the baari, and the cattle that tie it all together. This page is the village's farming year, crop by crop, the way a father explains it to a son who left for the city.</p>
+  </div>
+  <svg class="scene" viewBox="0 0 1200 300" role="img" aria-label="Fields of paddy and mustard beside the river, a tractor, a boring pump and mango trees">
+    <rect x="0" y="150" width="1200" height="150" fill="#2f4a1e"/>
+    <path d="M0 150 h1200 v18 H0Z" fill="#1f6f78"/>
+    <g stroke="#e8c24a" stroke-width="3" opacity=".8"><path d="M40 290 h260"/><path d="M60 275 h220"/><path d="M80 260 h180"/><path d="M100 245 h140"/><path d="M120 230 h100"/></g>
+    <g stroke="#7fb04e" stroke-width="3" opacity=".9"><path d="M700 290 h300"/><path d="M720 275 h260"/><path d="M740 260 h220"/><path d="M760 245 h180"/><path d="M780 230 h140"/></g>
+    <g><rect x="420" y="222" width="90" height="38" rx="6" fill="#b8321f"/><rect x="480" y="200" width="36" height="30" fill="#b8321f"/><circle cx="440" cy="268" r="18" fill="#1b1a3a"/><circle cx="500" cy="272" r="12" fill="#1b1a3a"/><path d="M520 196 v-26" stroke="#1b1a3a" stroke-width="4"/></g>
+    <g><rect x="600" y="236" width="30" height="40" fill="#f4e2c9"/><path d="M615 236 v-30 h40 v8" stroke="#1b1a3a" stroke-width="5" fill="none"/><path d="M655 214 q20 30 40 70" stroke="#3fa3ad" stroke-width="5" fill="none"/></g>
+    <g><rect x="1060" y="230" width="12" height="60" fill="#4a2a18"/><ellipse cx="1066" cy="218" rx="52" ry="36" fill="#3d6b22"/><circle cx="1050" cy="226" r="5" fill="#f2b134"/><circle cx="1084" cy="214" r="5" fill="#f2b134"/></g>
+    <g><rect x="340" y="246" width="10" height="44" fill="#4a2a18"/><ellipse cx="345" cy="236" rx="40" ry="28" fill="#3d6b22"/></g>
+    <g fill="#f4e2c9"><ellipse cx="880" cy="214" rx="22" ry="11"/><circle cx="904" cy="208" r="7"/><rect x="866" y="220" width="4" height="12"/><rect x="890" y="220" width="4" height="12"/></g>
+  </svg>
+</section>
+
+<section class="band"><div class="wrap">
+  <p class="eyebrow">Mitti aur paani</p>
+  <h2>The land between two rivers</h2>
+  <p class="lead">The village stands on the north bank of the Budhi Gandak, the "old Gandak", a slow river that floods its silt into the fields most Sawans. The soil is a deep alluvial loam: sandy toward the diara, heavy and clayey in the low chaur fields that hold the paddy water, light on the bhith uplands where the mango, the maize and the tobacco go. Groundwater is a hand-pump away; every tola has its borings, and a pumpset and a length of pipe can take water to any field in the dry months.</p>
+  <div class="tiles">
+    <div class="tile"><b>3</b><span>seasons: Kharif, Rabi and Zaid (garma)</span></div>
+    <div class="tile"><b>22+</b><span>crops in this page, from dhaan to tambaku</span></div>
+    <div class="tile"><b>2 rivers</b><span>Budhi Gandak and Bagmati, whose silt made the soil</span></div>
+    <div class="tile"><b>1 university</b><span>across the river: the varieties, the seed and the advice come from Pusa</span></div>
+  </div>
+  <div class="jump">
+    <a href="#kharif">Kharif</a><a href="#rabi">Rabi</a><a href="#zaid">Zaid / Garma</a><a href="#bagh">Bagh-bagicha</a><a href="#nakdi">Nakdi &amp; pashu</a><a href="#calendar">Calendar</a><a href="#pusa">Pusa</a><a href="#words">Words of the field</a>
+  </div>
+</div></section>
+
+<section class="band " id="kharif"><div class="wrap">
+  <p class="eyebrow">Mausam 1 of 5</p><h2>Kharif · खरीफ</h2><p class="lead">Asadh to Kartik (June to November). Sown with the monsoon, harvested after it. The Budhi Gandak decides how this season goes.</p>
+  <div class="crops"><article class="crop" id="dhaan-kharif">
+  <div class="ch"><div class="ico bg-river"><svg viewBox="0 0 84 84"><path d="M42 72 V30" stroke="#fff6e8" stroke-width="4"/><path d="M42 44 c-8 -2 -14 -8 -16 -16 c8 0 14 6 16 16Z M42 36 c8 -2 14 -8 16 -16 c-8 0 -14 6 -16 16Z M42 54 c-8 -2 -14 -8 -16 -16 c8 0 14 6 16 16Z M42 48 c8 -2 14 -8 16 -16 c-8 0 -14 6 -16 16Z" fill="#fff6e8"/></svg></div><div><h3>Dhaan (Paddy)</h3><p class="hin">धान</p></div></div>
+  <dl class="facts">
+    <div><dt>Kism · Varieties</dt><dd>Rajendra Mahsuri, Sona Mahsuri, Swarna (MTU 7029), Rajendra Bhagwati; long-duration local Katarni-type scented rice in a few fields</dd></div>
+    <div><dt>Buwai · Sowing</dt><dd>Nursery (bichda) in Jeth, 15 May–15 June; transplanting (ropni) with the first rains, late June–July</dd></div>
+    <div><dt>Katai · Harvest</dt><dd>Kartik–Aghan, October–November; the new rice is offered first as Nava-anna</dd></div>
+    <div><dt>Paani · Water</dt><dd>Standing water through the season; the Budhi Gandak flood helps or drowns it depending on the year</dd></div>
+    <div><dt>Upaj · Yield</dt><dd>18–25 quintals per bigha in a good year (one Malinagar bigha ≈ 0.6 acre as reckoned locally)</dd></div>
+  </dl>
+  <details><summary>Kaise ugate hain · How it is grown</summary><ol class="steps"><li>Nursery: a small, well-puddled plot near the house; seed soaked, sprouted and broadcast; 25–30 days to the seedling.</li><li>Field: ploughed wet (kadwa) two or three times with tractor or bail, bunds (aari) repaired to hold water, levelled with the patela.</li><li>Ropni: women transplant in lines, two or three seedlings per hill, a hand's width apart. The ropni songs are sung here.</li><li>Weeding (nikai) twice by hand; urea in two splits; water kept standing till the grain fills, then drained for harvest.</li><li>Harvest by sickle (hansua), bundled, carried to the khalihan, threshed by thresher or by bullocks walking in a circle (daun), winnowed in the wind with the soop.</li></ol></details>
+  <p class="use"><b>Kaam aata hai:</b> The year's rice, chura for Sankranti and Chhath, murhi, rice straw (puaal) for the cattle and the roof</p>
+</article><article class="crop" id="makai-kharif">
+  <div class="ch"><div class="ico bg-river"><svg viewBox="0 0 84 84"><path d="M42 72 V30" stroke="#fff6e8" stroke-width="4"/><path d="M42 44 c-8 -2 -14 -8 -16 -16 c8 0 14 6 16 16Z M42 36 c8 -2 14 -8 16 -16 c-8 0 -14 6 -16 16Z M42 54 c-8 -2 -14 -8 -16 -16 c8 0 14 6 16 16Z M42 48 c8 -2 14 -8 16 -16 c-8 0 -14 6 -16 16Z" fill="#fff6e8"/></svg></div><div><h3>Makai (Maize)</h3><p class="hin">मकई</p></div></div>
+  <dl class="facts">
+    <div><dt>Kism · Varieties</dt><dd>Rajendra Hybrid Makka, Shaktiman, Pusa hybrid; kharif and a growing rabi/winter crop</dd></div>
+    <div><dt>Buwai · Sowing</dt><dd>Kharif: with the first rain, June. Rabi maize: October–November on the higher fields</dd></div>
+    <div><dt>Katai · Harvest</dt><dd>Kharif: September–October. Rabi: March–April</dd></div>
+    <div><dt>Paani · Water</dt><dd>Needs drainage; drowns in standing water, so it goes on the upland (bhith) fields</dd></div>
+    <div><dt>Upaj · Yield</dt><dd>12–20 quintals per bigha; rabi maize yields more</dd></div>
+  </dl>
+  <details><summary>Kaise ugate hain · How it is grown</summary><ol class="steps"><li>Ploughed dry, lines two feet apart, seed dibbled by hand or seed drill.</li><li>Earthing-up (mitti chadhana) at knee height so the stalk stands in the wind.</li><li>Two irrigations for rabi maize; kharif lives on rain.</li><li>Cobs picked when the husk dries; shelled by hand or sheller; stalks (dantha) fed to cattle.</li></ol></details>
+  <p class="use"><b>Kaam aata hai:</b> Bhutta roasted at the chowk in Bhado, makai ka sattu, makai roti in winter, and most of it sold to the poultry-feed traders at Pusa</p>
+</article><article class="crop" id="arhar-kharif">
+  <div class="ch"><div class="ico bg-river"><svg viewBox="0 0 84 84"><path d="M42 72 V30" stroke="#fff6e8" stroke-width="4"/><path d="M42 44 c-8 -2 -14 -8 -16 -16 c8 0 14 6 16 16Z M42 36 c8 -2 14 -8 16 -16 c-8 0 -14 6 -16 16Z M42 54 c-8 -2 -14 -8 -16 -16 c8 0 14 6 16 16Z M42 48 c8 -2 14 -8 16 -16 c-8 0 -14 6 -16 16Z" fill="#fff6e8"/></svg></div><div><h3>Arhar, Urad, Moong (Pulses)</h3><p class="hin">अरहर · उड़द · मूंग</p></div></div>
+  <dl class="facts">
+    <div><dt>Kism · Varieties</dt><dd>Rajendra Arhar 1, Pusa 9 arhar; local urad and moong</dd></div>
+    <div><dt>Buwai · Sowing</dt><dd>Arhar in June–July on bunds and field edges; urad and moong in July, and moong again in Zaid (March)</dd></div>
+    <div><dt>Katai · Harvest</dt><dd>Arhar: Phagun–Chaitra, after eight months. Urad/moong: 70–90 days</dd></div>
+    <div><dt>Paani · Water</dt><dd>Rain-fed; arhar needs none after establishment</dd></div>
+    <div><dt>Upaj · Yield</dt><dd>Arhar 3–5 quintals per bigha; moong 2–3</dd></div>
+  </dl>
+  <details><summary>Kaise ugate hain · How it is grown</summary><ol class="steps"><li>Arhar sown along the aari (bund) and as a border to the maize so it uses no field of its own.</li><li>Urad and moong broadcast after one ploughing and left; one weeding.</li><li>Pods picked by hand as they dry; pulse threshed with a stick on the khalihan.</li><li>The arhar stalks make the year's jhadu (brooms) and kindling.</li></ol></details>
+  <p class="use"><b>Kaam aata hai:</b> The dal of every meal; moong for the Kharna kheer in some houses; arhar dal with bhaat is the Bihari plate</p>
+</article><article class="crop" id="patsan-kharif">
+  <div class="ch"><div class="ico bg-river"><svg viewBox="0 0 84 84"><path d="M42 72 V30" stroke="#fff6e8" stroke-width="4"/><path d="M42 44 c-8 -2 -14 -8 -16 -16 c8 0 14 6 16 16Z M42 36 c8 -2 14 -8 16 -16 c-8 0 -14 6 -16 16Z M42 54 c-8 -2 -14 -8 -16 -16 c8 0 14 6 16 16Z M42 48 c8 -2 14 -8 16 -16 c-8 0 -14 6 -16 16Z" fill="#fff6e8"/></svg></div><div><h3>Patsan (Jute)</h3><p class="hin">पटसन · पाट</p></div></div>
+  <dl class="facts">
+    <div><dt>Kism · Varieties</dt><dd>JRO 524 (tossa), local white jute; grown less every year</dd></div>
+    <div><dt>Buwai · Sowing</dt><dd>March–April on the low, moist fields near the river</dd></div>
+    <div><dt>Katai · Harvest</dt><dd>July–August, 100–120 days, before the paddy needs the land</dd></div>
+    <div><dt>Paani · Water</dt><dd>Needs the pre-monsoon moisture and standing water afterward for retting (sarna)</dd></div>
+    <div><dt>Upaj · Yield</dt><dd>6–8 quintals of fibre per bigha</dd></div>
+  </dl>
+  <details><summary>Kaise ugate hain · How it is grown</summary><ol class="steps"><li>Broadcast thickly, thinned by hand.</li><li>Cut at the base when the plants begin to flower, tied in bundles.</li><li>Retted (sadaana) in the pokhar or a ditch for two to three weeks under water and mud until the bark loosens.</li><li>Fibre stripped by hand standing in the water, washed, dried on the bamboo and sold at the Samastipur haat.</li></ol></details>
+  <p class="use"><b>Kaam aata hai:</b> Rope, sacks and the stalks (jute sticks, pat-katiya) for fences, roof lining and Holika's fire</p>
+</article><article class="crop" id="sabzi-kharif">
+  <div class="ch"><div class="ico bg-river"><svg viewBox="0 0 84 84"><path d="M42 72 V30" stroke="#fff6e8" stroke-width="4"/><path d="M42 44 c-8 -2 -14 -8 -16 -16 c8 0 14 6 16 16Z M42 36 c8 -2 14 -8 16 -16 c-8 0 -14 6 -16 16Z M42 54 c-8 -2 -14 -8 -16 -16 c8 0 14 6 16 16Z M42 48 c8 -2 14 -8 16 -16 c-8 0 -14 6 -16 16Z" fill="#fff6e8"/></svg></div><div><h3>Sabzi, Kharif (Monsoon vegetables)</h3><p class="hin">बरसाती सब्ज़ी</p></div></div>
+  <dl class="facts">
+    <div><dt>Kism · Varieties</dt><dd>Nenua, jhingi, kaddu, lauki, karela, parwal, bhindi, bodi (long beans), ol (elephant-foot yam), kachu (taro), saag</dd></div>
+    <div><dt>Buwai · Sowing</dt><dd>May–June on the machaan (trellis) by the house and the baari</dd></div>
+    <div><dt>Katai · Harvest</dt><dd>July–October, picked every second day</dd></div>
+    <div><dt>Paani · Water</dt><dd>Rain; the machaan keeps the fruit off the wet ground</dd></div>
+    <div><dt>Upaj · Yield</dt><dd>Household scale; the surplus goes to the Pusa haat on Tuesday and Friday</dd></div>
+  </dl>
+  <details><summary>Kaise ugate hain · How it is grown</summary><ol class="steps"><li>Seeds set in the compost by the cattle shed; creepers trained onto a bamboo machaan.</li><li>Ol and kachu planted in Chaitra, dug in Kartik; ol is the Diwali vegetable.</li><li>Saag (noni, poi, lal saag) broadcast in the baari and cut repeatedly.</li><li>Nothing is bought: the vines and the chulha ash are the fertiliser.</li></ol></details>
+  <p class="use"><b>Kaam aata hai:</b> Kaddu-bhaat for Nahay Khay, jhingi and noni saag for Jitiya, ol for Diwali, parwal all season</p>
+</article></div>
+</div></section>
+<section class="band alt" id="rabi"><div class="wrap">
+  <p class="eyebrow">Mausam 2 of 5</p><h2>Rabi · रबी</h2><p class="lead">Kartik to Chaitra (November to April). Sown in the cool after the rice, watered from the boring, harvested before the loo. The season that fills the granary.</p>
+  <div class="crops"><article class="crop" id="gehu-rabi">
+  <div class="ch"><div class="ico bg-sun"><svg viewBox="0 0 84 84"><path d="M42 72 V26" stroke="#fff6e8" stroke-width="4"/><g fill="#fff6e8"><ellipse cx="34" cy="30" rx="5" ry="8" transform="rotate(-30 34 30)"/><ellipse cx="50" cy="30" rx="5" ry="8" transform="rotate(30 50 30)"/><ellipse cx="34" cy="42" rx="5" ry="8" transform="rotate(-30 34 42)"/><ellipse cx="50" cy="42" rx="5" ry="8" transform="rotate(30 50 42)"/><ellipse cx="34" cy="54" rx="5" ry="8" transform="rotate(-30 34 54)"/><ellipse cx="50" cy="54" rx="5" ry="8" transform="rotate(30 50 54)"/></g></svg></div><div><h3>Gehu (Wheat)</h3><p class="hin">गेहूँ</p></div></div>
+  <dl class="facts">
+    <div><dt>Kism · Varieties</dt><dd>HD 2967, HD 3086, PBW 343 (old favourite), DBW 187, Pusa and Rajendra varieties from the university</dd></div>
+    <div><dt>Buwai · Sowing</dt><dd>Kartik–Aghan, 1 November to 25 November for the best yield; late sowing after paddy runs into December</dd></div>
+    <div><dt>Katai · Harvest</dt><dd>Chaitra–Baisakh, late March to mid-April, before the loo</dd></div>
+    <div><dt>Paani · Water</dt><dd>Four to five irrigations from the boring (tube-well): crown root, tillering, flowering, grain filling</dd></div>
+    <div><dt>Upaj · Yield</dt><dd>12–18 quintals per bigha</dd></div>
+  </dl>
+  <details><summary>Kaise ugate hain · How it is grown</summary><ol class="steps"><li>The paddy field drained and ploughed three times as soon as the rice is off; the clods broken with the patela.</li><li>Seed treated and sown by seed drill in lines, or broadcast behind the plough on smaller plots.</li><li>DAP at sowing, urea with the first and second irrigations.</li><li>Harvested by sickle in the heat; the women cut, the men bundle; threshed by the thresher at the khalihan in Baisakh; the bhusa (chaff) stored for the cattle's whole year.</li></ol></details>
+  <p class="use"><b>Kaam aata hai:</b> The year's atta, the thekua for Chhath, pua for Holi, pedakiya for Teej</p>
+</article><article class="crop" id="sarso-rabi">
+  <div class="ch"><div class="ico bg-sun"><svg viewBox="0 0 84 84"><path d="M42 72 V26" stroke="#fff6e8" stroke-width="4"/><g fill="#fff6e8"><ellipse cx="34" cy="30" rx="5" ry="8" transform="rotate(-30 34 30)"/><ellipse cx="50" cy="30" rx="5" ry="8" transform="rotate(30 50 30)"/><ellipse cx="34" cy="42" rx="5" ry="8" transform="rotate(-30 34 42)"/><ellipse cx="50" cy="42" rx="5" ry="8" transform="rotate(30 50 42)"/><ellipse cx="34" cy="54" rx="5" ry="8" transform="rotate(-30 34 54)"/><ellipse cx="50" cy="54" rx="5" ry="8" transform="rotate(30 50 54)"/></g></svg></div><div><h3>Sarso / Rai (Mustard)</h3><p class="hin">सरसों · राई</p></div></div>
+  <dl class="facts">
+    <div><dt>Kism · Varieties</dt><dd>Rajendra Sufalam, Pusa Bold, Varuna, Rajendra Anukul; toria as a short catch crop</dd></div>
+    <div><dt>Buwai · Sowing</dt><dd>Kartik, mid-October to early November, on the lighter uplands</dd></div>
+    <div><dt>Katai · Harvest</dt><dd>Phagun, February–March, when the pods rattle</dd></div>
+    <div><dt>Paani · Water</dt><dd>One or two irrigations; mostly on the residual moisture</dd></div>
+    <div><dt>Upaj · Yield</dt><dd>4–6 quintals per bigha</dd></div>
+  </dl>
+  <details><summary>Kaise ugate hain · How it is grown</summary><ol class="steps"><li>Sown thin in lines after one ploughing; thinned to a hand's width.</li><li>The field turns yellow by Makar Sankranti; this is the Vasant Panchami field, and the bees from the Pusa apiaries come to it.</li><li>Cut before fully dry to save the seed; dried on the khalihan, beaten with sticks.</li><li>Pressed at the kolhu or the mill into mustard oil; the cake (khalli) goes to the cattle.</li></ol></details>
+  <p class="use"><b>Kaam aata hai:</b> Mustard oil for the whole year, sarso ka saag in winter, the oil in the Diwali diyas, and the paste of every Bihari fish curry</p>
+</article><article class="crop" id="masoor-rabi">
+  <div class="ch"><div class="ico bg-sun"><svg viewBox="0 0 84 84"><path d="M42 72 V26" stroke="#fff6e8" stroke-width="4"/><g fill="#fff6e8"><ellipse cx="34" cy="30" rx="5" ry="8" transform="rotate(-30 34 30)"/><ellipse cx="50" cy="30" rx="5" ry="8" transform="rotate(30 50 30)"/><ellipse cx="34" cy="42" rx="5" ry="8" transform="rotate(-30 34 42)"/><ellipse cx="50" cy="42" rx="5" ry="8" transform="rotate(30 50 42)"/><ellipse cx="34" cy="54" rx="5" ry="8" transform="rotate(-30 34 54)"/><ellipse cx="50" cy="54" rx="5" ry="8" transform="rotate(30 50 54)"/></g></svg></div><div><h3>Masoor, Chana, Khesari, Matar (Winter pulses)</h3><p class="hin">मसूर · चना · खेसारी · मटर</p></div></div>
+  <dl class="facts">
+    <div><dt>Kism · Varieties</dt><dd>Local masoor and Pusa Vaibhav; desi chana; khesari on the heavy low land; local matar</dd></div>
+    <div><dt>Buwai · Sowing</dt><dd>Kartik–Aghan, October–November, often as utera, broadcast into the standing paddy before harvest so it grows on the moisture</dd></div>
+    <div><dt>Katai · Harvest</dt><dd>Phagun–Chaitra, February–March</dd></div>
+    <div><dt>Paani · Water</dt><dd>None; this is the crop of the residual moisture</dd></div>
+    <div><dt>Upaj · Yield</dt><dd>Masoor 3–4 quintals per bigha, chana 4–5</dd></div>
+  </dl>
+  <details><summary>Kaise ugate hain · How it is grown</summary><ol class="steps"><li>Utera: seed broadcast into the ripening paddy; the paddy stubble shades it until it establishes.</li><li>No ploughing, no irrigation, one weeding; the cheapest crop a farmer grows.</li><li>Green chana (hora) roasted in the field on the stalk in Magh is the children's festival.</li><li>Pulled by hand, dried, threshed with the stick.</li></ol></details>
+  <p class="use"><b>Kaam aata hai:</b> Masoor dal, chana for sattu (the Satuani crop), hora in Magh, khesari for the cattle and the poorest years</p>
+</article><article class="crop" id="aloo-rabi">
+  <div class="ch"><div class="ico bg-sun"><svg viewBox="0 0 84 84"><path d="M42 72 V26" stroke="#fff6e8" stroke-width="4"/><g fill="#fff6e8"><ellipse cx="34" cy="30" rx="5" ry="8" transform="rotate(-30 34 30)"/><ellipse cx="50" cy="30" rx="5" ry="8" transform="rotate(30 50 30)"/><ellipse cx="34" cy="42" rx="5" ry="8" transform="rotate(-30 34 42)"/><ellipse cx="50" cy="42" rx="5" ry="8" transform="rotate(30 50 42)"/><ellipse cx="34" cy="54" rx="5" ry="8" transform="rotate(-30 34 54)"/><ellipse cx="50" cy="54" rx="5" ry="8" transform="rotate(30 50 54)"/></g></svg></div><div><h3>Aloo (Potato)</h3><p class="hin">आलू</p></div></div>
+  <dl class="facts">
+    <div><dt>Kism · Varieties</dt><dd>Kufri Jyoti, Kufri Pukhraj, Kufri Chandramukhi; seed from the cold storage at Pusa and Samastipur</dd></div>
+    <div><dt>Buwai · Sowing</dt><dd>Kartik, mid-October to November</dd></div>
+    <div><dt>Katai · Harvest</dt><dd>Magh–Phagun, January–February, 80–100 days</dd></div>
+    <div><dt>Paani · Water</dt><dd>Three to four light irrigations; the field must drain</dd></div>
+    <div><dt>Upaj · Yield</dt><dd>60–90 quintals per bigha; the most profitable rabi crop when the price holds</dd></div>
+  </dl>
+  <details><summary>Kaise ugate hain · How it is grown</summary><ol class="steps"><li>Ridges (mend) made with the ridger or by hand; cut seed pieces set a foot apart and covered.</li><li>Earthed up twice; the haulm cut ten days before digging to set the skin.</li><li>Dug by hand or by the tractor digger; sorted on the field into seed, table and small.</li><li>Stored in the cold storage at Pusa or sold straight from the field to the Muzaffarpur traders.</li></ol></details>
+  <p class="use"><b>Kaam aata hai:</b> Aloo chokha, aloo-baingan for Sankranti khichdi, the dum aloo of every wedding</p>
+</article><article class="crop" id="pyaaz-rabi">
+  <div class="ch"><div class="ico bg-sun"><svg viewBox="0 0 84 84"><path d="M42 72 V26" stroke="#fff6e8" stroke-width="4"/><g fill="#fff6e8"><ellipse cx="34" cy="30" rx="5" ry="8" transform="rotate(-30 34 30)"/><ellipse cx="50" cy="30" rx="5" ry="8" transform="rotate(30 50 30)"/><ellipse cx="34" cy="42" rx="5" ry="8" transform="rotate(-30 34 42)"/><ellipse cx="50" cy="42" rx="5" ry="8" transform="rotate(30 50 42)"/><ellipse cx="34" cy="54" rx="5" ry="8" transform="rotate(-30 34 54)"/><ellipse cx="50" cy="54" rx="5" ry="8" transform="rotate(30 50 54)"/></g></svg></div><div><h3>Pyaaz, Lahsun, Mirch, Haldi (Onion, garlic, chilli, turmeric)</h3><p class="hin">प्याज़ · लहसुन · मिर्च · हल्दी</p></div></div>
+  <dl class="facts">
+    <div><dt>Kism · Varieties</dt><dd>Local red onion, Pusa Red; local garlic; Pusa Jwala chilli; Rajendra Sonia turmeric</dd></div>
+    <div><dt>Buwai · Sowing</dt><dd>Onion nursery in Kartik, transplanted in Aghan; garlic cloves in Kartik; chilli nursery in Bhado, transplanted in Ashwin; turmeric rhizomes in Baisakh</dd></div>
+    <div><dt>Katai · Harvest</dt><dd>Onion and garlic in Chaitra–Baisakh; chilli from Magh onward; turmeric in Magh–Phagun after nine months</dd></div>
+    <div><dt>Paani · Water</dt><dd>Light, frequent irrigation; turmeric lives on the monsoon and shade</dd></div>
+    <div><dt>Upaj · Yield</dt><dd>Household plots mostly; onion 30–40 quintals per bigha on the commercial plots</dd></div>
+  </dl>
+  <details><summary>Kaise ugate hain · How it is grown</summary><ol class="steps"><li>Onion and chilli raised in a nursery bed by the well, transplanted in lines.</li><li>Garlic cloves pushed into the ridge by thumb, a hand apart.</li><li>Turmeric planted under the mango and banana shade, mulched with leaves, dug in winter and boiled and dried for the year's haldi.</li><li>Chilli dried on the roof in Phagun; the red of the thatch in spring.</li></ol></details>
+  <p class="use"><b>Kaam aata hai:</b> The masala of the year; the haldi of every wedding's haldi ceremony comes from the baari</p>
+</article><article class="crop" id="sabzi-rabi">
+  <div class="ch"><div class="ico bg-sun"><svg viewBox="0 0 84 84"><path d="M42 72 V26" stroke="#fff6e8" stroke-width="4"/><g fill="#fff6e8"><ellipse cx="34" cy="30" rx="5" ry="8" transform="rotate(-30 34 30)"/><ellipse cx="50" cy="30" rx="5" ry="8" transform="rotate(30 50 30)"/><ellipse cx="34" cy="42" rx="5" ry="8" transform="rotate(-30 34 42)"/><ellipse cx="50" cy="42" rx="5" ry="8" transform="rotate(30 50 42)"/><ellipse cx="34" cy="54" rx="5" ry="8" transform="rotate(-30 34 54)"/><ellipse cx="50" cy="54" rx="5" ry="8" transform="rotate(30 50 54)"/></g></svg></div><div><h3>Sabzi, Rabi (Winter vegetables)</h3><p class="hin">जाड़े की सब्ज़ी</p></div></div>
+  <dl class="facts">
+    <div><dt>Kism · Varieties</dt><dd>Gobhi (cauliflower), patta gobhi (cabbage), tamatar, baingan, mooli, gajar, matar, palak, methi, bathua, dhaniya</dd></div>
+    <div><dt>Buwai · Sowing</dt><dd>Nurseries in Ashwin–Kartik, transplanted in Kartik–Aghan; root crops and greens broadcast</dd></div>
+    <div><dt>Katai · Harvest</dt><dd>Aghan to Phagun, November to March</dd></div>
+    <div><dt>Paani · Water</dt><dd>Light irrigation every week from the boring</dd></div>
+    <div><dt>Upaj · Yield</dt><dd>The surplus goes to the Pusa haat and the Samastipur mandi; cauliflower is the main cash vegetable</dd></div>
+  </dl>
+  <details><summary>Kaise ugate hain · How it is grown</summary><ol class="steps"><li>Raised beds along the field edge, compost from the gobar pit.</li><li>Transplanted in the evening and watered by hand the first days.</li><li>Picked at dawn for the haat; cauliflower and cabbage go by tempo to Samastipur.</li><li>Bathua and methi grow themselves in the wheat and are picked as a weed-crop.</li></ol></details>
+  <p class="use"><b>Kaam aata hai:</b> Gobhi ki sabzi all winter, mooli-dhaniya chutney, saag of every kind, and the Vivah Panchami wedding feasts</p>
+</article></div>
+</div></section>
+<section class="band " id="zaid"><div class="wrap">
+  <p class="eyebrow">Mausam 3 of 5</p><h2>Zaid / Garma · गरमा</h2><p class="lead">Phagun to Jeth (March to June). The short hot season between the two, for melons on the river sand, summer vegetables and a quick moong.</p>
+  <div class="crops"><article class="crop" id="moong-zaid">
+  <div class="ch"><div class="ico bg-leaf"><svg viewBox="0 0 84 84"><circle cx="42" cy="46" r="22" fill="#fff6e8"/><path d="M28 36 q14 -14 28 0" stroke="#4f7d2b" stroke-width="4" fill="none"/><circle cx="42" cy="18" r="6" fill="#ffd27a"/></svg></div><div><h3>Moong and Urad, Zaid</h3><p class="hin">गरमा मूंग</p></div></div>
+  <dl class="facts">
+    <div><dt>Kism · Varieties</dt><dd>Pusa Vishal moong, SML 668; local urad</dd></div>
+    <div><dt>Buwai · Sowing</dt><dd>Phagun–Chaitra, March, immediately after the potato or the mustard</dd></div>
+    <div><dt>Katai · Harvest</dt><dd>Jeth, late May–June, 60–65 days, just before the paddy nursery</dd></div>
+    <div><dt>Paani · Water</dt><dd>Two or three irrigations; it is the crop that uses the boring in the hot season</dd></div>
+    <div><dt>Upaj · Yield</dt><dd>2–3 quintals per bigha, and the field is left richer for the paddy</dd></div>
+  </dl>
+  <details><summary>Kaise ugate hain · How it is grown</summary><ol class="steps"><li>Sown in lines in the moist potato field without further ploughing.</li><li>One weeding, one spray at flowering if the aphid comes.</li><li>Pods picked in two rounds; plants turned into the soil as green manure before the paddy.</li></ol></details>
+  <p class="use"><b>Kaam aata hai:</b> Moong dal, moong sprouts in the loo, and nitrogen for the rice</p>
+</article><article class="crop" id="kheera-zaid">
+  <div class="ch"><div class="ico bg-leaf"><svg viewBox="0 0 84 84"><circle cx="42" cy="46" r="22" fill="#fff6e8"/><path d="M28 36 q14 -14 28 0" stroke="#4f7d2b" stroke-width="4" fill="none"/><circle cx="42" cy="18" r="6" fill="#ffd27a"/></svg></div><div><h3>Kheera, Kharbooja, Tarbuj (River-sand melons)</h3><p class="hin">खीरा · खरबूजा · तरबूज</p></div></div>
+  <dl class="facts">
+    <div><dt>Kism · Varieties</dt><dd>Local kharbooja, Sugar Baby and local tarbuj, local kheera and kakdi</dd></div>
+    <div><dt>Buwai · Sowing</dt><dd>Phagun, February, in pits dug in the sandy bed (diara) of the Budhi Gandak as the water falls</dd></div>
+    <div><dt>Katai · Harvest</dt><dd>Baisakh–Jeth, April–June, until the river rises</dd></div>
+    <div><dt>Paani · Water</dt><dd>None; the roots reach the river's water table</dd></div>
+    <div><dt>Upaj · Yield</dt><dd>A diara plot feeds the family and the Pusa chowk</dd></div>
+  </dl>
+  <details><summary>Kaise ugate hain · How it is grown</summary><ol class="steps"><li>Pits a yard apart in the river sand, filled with gobar and a handful of soil; three seeds to a pit.</li><li>Watched day and night from a machaan against jackals and boys.</li><li>Picked at dawn and sold cold from a wet gunny sack.</li><li>The first tarbuj is cut on Ganga Dussehra.</li></ol></details>
+  <p class="use"><b>Kaam aata hai:</b> The only sweetness of Jeth: kheera for Ganga Dussehra and Satuani, tarbuj for the whole village</p>
+</article><article class="crop" id="lauki-zaid">
+  <div class="ch"><div class="ico bg-leaf"><svg viewBox="0 0 84 84"><circle cx="42" cy="46" r="22" fill="#fff6e8"/><path d="M28 36 q14 -14 28 0" stroke="#4f7d2b" stroke-width="4" fill="none"/><circle cx="42" cy="18" r="6" fill="#ffd27a"/></svg></div><div><h3>Lauki, Bhindi, Parwal, Kaddu (Summer vegetables)</h3><p class="hin">गरमा सब्ज़ी</p></div></div>
+  <dl class="facts">
+    <div><dt>Kism · Varieties</dt><dd>Pusa Naveen lauki, Pusa A-4 bhindi, local parwal (pointed gourd, a perennial vine), Pusa kaddu</dd></div>
+    <div><dt>Buwai · Sowing</dt><dd>Phagun–Chaitra, February–March; parwal vines planted once and kept for years</dd></div>
+    <div><dt>Katai · Harvest</dt><dd>Baisakh–Sawan, April–July</dd></div>
+    <div><dt>Paani · Water</dt><dd>Irrigated from the boring every four or five days</dd></div>
+    <div><dt>Upaj · Yield</dt><dd>Household and haat scale</dd></div>
+  </dl>
+  <details><summary>Kaise ugate hain · How it is grown</summary><ol class="steps"><li>Lauki and kaddu on the machaan or the roof of the cattle shed.</li><li>Parwal: root cuttings planted in Magh on raised beds; the vine fruits every year from Baisakh.</li><li>Bhindi picked every second day before it hardens.</li><li>The vines are let run over the thatch where there is no machaan.</li></ol></details>
+  <p class="use"><b>Kaam aata hai:</b> Parwal-aloo for guests, lauki ki sabzi through the loo, the kaddu that becomes Nahay Khay's kaddu-bhaat</p>
+</article></div>
+</div></section>
+<section class="band alt" id="bagh"><div class="wrap">
+  <p class="eyebrow">Mausam 4 of 5</p><h2>Bagh-bagicha · बाग़-बग़ीचा</h2><p class="lead">The gachhi and the baari: the trees that were planted by grandparents and fruit every year without being asked.</p>
+  <div class="crops"><article class="crop" id="aam-bagh">
+  <div class="ch"><div class="ico bg-leaf"><svg viewBox="0 0 84 84"><rect x="38" y="48" width="8" height="26" fill="#fff6e8"/><ellipse cx="42" cy="38" rx="26" ry="20" fill="#fff6e8"/><circle cx="32" cy="42" r="4" fill="#f2b134"/><circle cx="52" cy="36" r="4" fill="#f2b134"/></svg></div><div><h3>Aam (Mango)</h3><p class="hin">आम</p></div></div>
+  <dl class="facts">
+    <div><dt>Kism · Varieties</dt><dd>Malda (Langra), Jardalu, Bombai, Sipia, Dudhiya Malda, Sukul, Kalkatiya, Zardalu; and the old seedling trees nobody can name</dd></div>
+    <div><dt>Buwai · Sowing</dt><dd>Grafts planted in Sawan–Bhado; a tree gives after five or six years and for seventy more</dd></div>
+    <div><dt>Katai · Harvest</dt><dd>Jeth–Asadh, late May to early July; the manjar (flowering) in Phagun is itself a festival</dd></div>
+    <div><dt>Paani · Water</dt><dd>Young trees watered in the hot months; old trees live on the water table</dd></div>
+    <div><dt>Upaj · Yield</dt><dd>A good tree gives three to five maunds; a bad year, aam ka manjar washed off by hail, is remembered for decades</dd></div>
+  </dl>
+  <details><summary>Kaise ugate hain · How it is grown</summary><ol class="steps"><li>Gachhi (orchard) blocks on the uplands around every tola; the trees planted by grandfathers.</li><li>Phagun: the manjar sprayed if the hopper comes; nothing else done.</li><li>Jeth: the gachhi is where the village sleeps, the boys guard from the machaan, the kachhi tori (raw mango) stolen for the chutney.</li><li>Picked with the long bamboo (lagi) and a cloth bag at the end; ripened in straw in a dark room (paal).</li><li>Aam ka achar, amawat (sun-dried mango leather) and aamchoor made from the surplus.</li></ol></details>
+  <p class="use"><b>Kaam aata hai:</b> The Jeth harvest that brings sons home; achar and amawat for the year; mango wood for the Chhath chulha; the leaves on every wedding and puja gate</p>
+</article><article class="crop" id="litchi-bagh">
+  <div class="ch"><div class="ico bg-leaf"><svg viewBox="0 0 84 84"><rect x="38" y="48" width="8" height="26" fill="#fff6e8"/><ellipse cx="42" cy="38" rx="26" ry="20" fill="#fff6e8"/><circle cx="32" cy="42" r="4" fill="#f2b134"/><circle cx="52" cy="36" r="4" fill="#f2b134"/></svg></div><div><h3>Litchi</h3><p class="hin">लीची</p></div></div>
+  <dl class="facts">
+    <div><dt>Kism · Varieties</dt><dd>Shahi (the Muzaffarpur litchi), China, Bedana, Purbi</dd></div>
+    <div><dt>Buwai · Sowing</dt><dd>Air-layered (gooti) plants in Sawan; bears after four or five years</dd></div>
+    <div><dt>Katai · Harvest</dt><dd>Jeth, late May to mid-June, a window of three weeks</dd></div>
+    <div><dt>Paani · Water</dt><dd>Needs the humid heat and a wet root zone before harvest; the Budhi Gandak basin is its home ground</dd></div>
+    <div><dt>Upaj · Yield</dt><dd>A mature tree gives 80–120 kg</dd></div>
+  </dl>
+  <details><summary>Kaise ugate hain · How it is grown</summary><ol class="steps"><li>Grown in the same gachhi as mango, in the lower, moister corners.</li><li>Trees netted or guarded against bats and parrots in Jeth.</li><li>Picked in bunches with the leaves on at dawn, packed in baskets with leaves and sent by tempo to Muzaffarpur and Pusa the same morning.</li><li>The first litchi of the year is eaten on Bat Savitri.</li></ol></details>
+  <p class="use"><b>Kaam aata hai:</b> The pride of the district; litchi honey from the Pusa apiaries; the Jeth wedding fruit</p>
+</article><article class="crop" id="kela-bagh">
+  <div class="ch"><div class="ico bg-leaf"><svg viewBox="0 0 84 84"><rect x="38" y="48" width="8" height="26" fill="#fff6e8"/><ellipse cx="42" cy="38" rx="26" ry="20" fill="#fff6e8"/><circle cx="32" cy="42" r="4" fill="#f2b134"/><circle cx="52" cy="36" r="4" fill="#f2b134"/></svg></div><div><h3>Kela (Banana)</h3><p class="hin">केला</p></div></div>
+  <dl class="facts">
+    <div><dt>Kism · Varieties</dt><dd>Chiniya (Chini Champa), Malbhog, Alpan, Dwarf Cavendish (Robusta) for the market</dd></div>
+    <div><dt>Buwai · Sowing</dt><dd>Suckers planted in Sawan–Bhado or Chaitra</dd></div>
+    <div><dt>Katai · Harvest</dt><dd>Twelve to fourteen months later, year-round; the stem is cut and a sucker replaces it</dd></div>
+    <div><dt>Paani · Water</dt><dd>Needs regular water and the gobar of the cattle shed</dd></div>
+    <div><dt>Upaj · Yield</dt><dd>A bunch of 10–15 hands per plant; Chiniya smaller and sweeter</dd></div>
+  </dl>
+  <details><summary>Kaise ugate hain · How it is grown</summary><ol class="steps"><li>Planted in pits with gobar a yard apart in the baari behind the house.</li><li>Side suckers removed; one kept as the next plant.</li><li>Bunch cut green and ripened in the dark with straw; the stem split for the cattle.</li><li>The leaf cut fresh for every puja, every Chhath soop, every wedding feast.</li></ol></details>
+  <p class="use"><b>Kaam aata hai:</b> The Chhath and Chaukchanda fruit, the leaf plate of every bhoj, the kela ka kofta and the kachcha kela ki sabzi of fasting days</p>
+</article><article class="crop" id="katahal-bagh">
+  <div class="ch"><div class="ico bg-leaf"><svg viewBox="0 0 84 84"><rect x="38" y="48" width="8" height="26" fill="#fff6e8"/><ellipse cx="42" cy="38" rx="26" ry="20" fill="#fff6e8"/><circle cx="32" cy="42" r="4" fill="#f2b134"/><circle cx="52" cy="36" r="4" fill="#f2b134"/></svg></div><div><h3>Katahal, Amrood, Nimbu, Bael, Chakotra (Jackfruit, guava, lemon, bael, pomelo)</h3><p class="hin">कटहल · अमरूद · नींबू · बेल · चकोतरा</p></div></div>
+  <dl class="facts">
+    <div><dt>Kism · Varieties</dt><dd>Local seedling trees in every baari; Allahabad Safeda and Lucknow 49 guava; Kagzi lemon</dd></div>
+    <div><dt>Buwai · Sowing</dt><dd>Planted once, rarely tended</dd></div>
+    <div><dt>Katai · Harvest</dt><dd>Katahal Chaitra–Jeth; amrood Kartik–Magh; nimbu year-round; bael Baisakh–Jeth; chakotra Kartik</dd></div>
+    <div><dt>Paani · Water</dt><dd>None after the first years</dd></div>
+    <div><dt>Upaj · Yield</dt><dd>Enough that nobody counts</dd></div>
+  </dl>
+  <details><summary>Kaise ugate hain · How it is grown</summary><ol class="steps"><li>Katahal: the green fruit cut in Chaitra for the sabzi, the ripe fruit in Jeth; the seeds roasted.</li><li>Bael: the pulp made into the Satuani sharbat; the leaves are Shivratri's offering; the tree is never cut.</li><li>Amrood: the winter fruit of the school lunch; the leaves chewed for a toothache.</li><li>Nimbu: the achar and the sharbat; chakotra (grapefruit/pomelo) eaten with salt and chilli on the roof in Kartik.</li></ol></details>
+  <p class="use"><b>Kaam aata hai:</b> The free fruit of every baari and the leaves of several festivals</p>
+</article></div>
+</div></section>
+<section class="band " id="nakdi"><div class="wrap">
+  <p class="eyebrow">Mausam 5 of 5</p><h2>Nakdi aur pashu · नकदी फसल और पशु</h2><p class="lead">The crops that bring cash rather than food, and the cattle that make every other crop possible.</p>
+  <div class="crops"><article class="crop" id="ganna-nakdi">
+  <div class="ch"><div class="ico bg-sand"><svg viewBox="0 0 84 84"><rect x="22" y="22" width="40" height="40" rx="6" fill="#fff6e8"/><path d="M34 42 h16 M42 34 v16" stroke="#e8701a" stroke-width="4"/></svg></div><div><h3>Ganna (Sugarcane)</h3><p class="hin">गन्ना · ईख</p></div></div>
+  <dl class="facts">
+    <div><dt>Kism · Varieties</dt><dd>CoP 9301, CoSe 95422, Rajendra Ganna 1; the thin local eekh kept for Chhath</dd></div>
+    <div><dt>Buwai · Sowing</dt><dd>Phagun–Chaitra, February–March, setts of three buds laid in furrows; a ratoon (peri) kept for one or two more years</dd></div>
+    <div><dt>Katai · Harvest</dt><dd>Kartik to Phagun, November to March, cut for the mill at Pusa or the kolhu</dd></div>
+    <div><dt>Paani · Water</dt><dd>Five to six irrigations in the dry months; the monsoon does the rest</dd></div>
+    <div><dt>Upaj · Yield</dt><dd>250–350 quintals per bigha; the mill pays by the quintal, late</dd></div>
+  </dl>
+  <details><summary>Kaise ugate hain · How it is grown</summary><ol class="steps"><li>Furrows two and a half feet apart, setts laid end to end and covered; germination in three weeks.</li><li>Earthed up in Jeth so the cane stands in the Sawan wind; the leaves tied together (bandhai) in Bhado.</li><li>Cut at ground level with the gandasa, stripped of trash, bundled and sent by tractor-trolley to the Pusa sugar mill, or crushed at the kolhu for gur.</li><li>The ratoon (peri) sprouts from the stubble and gives a second crop with less work.</li></ol></details>
+  <p class="use"><b>Kaam aata hai:</b> Gur from the kolhu in Aghan, the sugarcane stalks lifted in the Chhath soop, and the mill cheque that pays for the wedding</p>
+</article><article class="crop" id="tambaku-nakdi">
+  <div class="ch"><div class="ico bg-sand"><svg viewBox="0 0 84 84"><rect x="22" y="22" width="40" height="40" rx="6" fill="#fff6e8"/><path d="M34 42 h16 M42 34 v16" stroke="#e8701a" stroke-width="4"/></svg></div><div><h3>Tambaku (Tobacco)</h3><p class="hin">तंबाकू · सुरती</p></div></div>
+  <dl class="facts">
+    <div><dt>Kism · Varieties</dt><dd>Local chewing tobacco (surti) types; Pusa was a tobacco farm before it was a research station</dd></div>
+    <div><dt>Buwai · Sowing</dt><dd>Nursery in Bhado–Ashwin, transplanted in Kartik on the well-drained upland</dd></div>
+    <div><dt>Katai · Harvest</dt><dd>Magh–Phagun, January–March, leaf by leaf (priming) or whole plant</dd></div>
+    <div><dt>Paani · Water</dt><dd>Two or three light irrigations; cannot stand waterlogging</dd></div>
+    <div><dt>Upaj · Yield</dt><dd>8–12 quintals of cured leaf per bigha; grown in smaller patches every year</dd></div>
+  </dl>
+  <details><summary>Kaise ugate hain · How it is grown</summary><ol class="steps"><li>Seedlings transplanted two feet apart, topped (the flower pinched) to thicken the leaf.</li><li>Suckers removed weekly by hand; the hands turn black with the gum.</li><li>Leaves cut, wilted in the field, then sun-cured on bamboo racks and in heaps.</li><li>Sold to the Samastipur and Hajipur traders for khaini and surti.</li></ol></details>
+  <p class="use"><b>Kaam aata hai:</b> Samastipur's old cash crop and the khaini of every chowk; the women of the village have long wanted it gone</p>
+</article><article class="crop" id="doodh-nakdi">
+  <div class="ch"><div class="ico bg-sand"><svg viewBox="0 0 84 84"><rect x="22" y="22" width="40" height="40" rx="6" fill="#fff6e8"/><path d="M34 42 h16 M42 34 v16" stroke="#e8701a" stroke-width="4"/></svg></div><div><h3>Doodh (Dairy)</h3><p class="hin">दूध · पशुपालन</p></div></div>
+  <dl class="facts">
+    <div><dt>Kism · Varieties</dt><dd>Desi cows, Murrah and local buffaloes, a few crossbred (Jersey) cows since the Pusa dairy programmes</dd></div>
+    <div><dt>Buwai · Sowing</dt><dd>A calf is a year's event; the gowshala by every house</dd></div>
+    <div><dt>Katai · Harvest</dt><dd>Milk twice a day, year-round, to the Sudha (COMFED) collection point at the chowk</dd></div>
+    <div><dt>Paani · Water</dt><dd>The pokhar for bathing the buffaloes; bhusa, puaal, green maize and the mustard khalli for feed</dd></div>
+    <div><dt>Upaj · Yield</dt><dd>A good buffalo gives 8–10 litres a day</dd></div>
+  </dl>
+  <details><summary>Kaise ugate hain · How it is grown</summary><ol class="steps"><li>Cattle shed (gowshala) cleaned at dawn; the gobar goes to the compost pit and the gobar-gas plant where there is one, and into uple (dung cakes) for the chulha.</li><li>Milking by the women at dawn and dusk; curd set every evening in the clay handi.</li><li>Govardhan Puja after Diwali is the cattle's festival: bathed, horns painted, fed first.</li><li>Sudha milk van collects at the chowk; the rest is the house's dahi, ghee and the Kharna kheer.</li></ol></details>
+  <p class="use"><b>Kaam aata hai:</b> Dahi-chura, ghee for the diya and the thekua, kheer for Kharna and Kojagara, the gobar that fertilises every field above</p>
+</article></div>
+</div></section>
+
+
+<section class="band" id="calendar"><div class="wrap">
+  <p class="eyebrow">Kisan ka saal</p>
+  <h2>The farming calendar</h2>
+  <p class="lead">Twelve months, as a Malinagar farmer counts them, from Baisakh to Chaitra. Read a row left to right to follow one crop through its year.</p>
+  <div class="cal-wrap"><table class="cal"><thead><tr><th></th><th><span class="hi">बैसाख</span><br>Baisakh<br><small>Apr–May</small></th><th><span class="hi">जेठ</span><br>Jeth<br><small>May–Jun</small></th><th><span class="hi">आषाढ़</span><br>Asadh<br><small>Jun–Jul</small></th><th><span class="hi">सावन</span><br>Sawan<br><small>Jul–Aug</small></th><th><span class="hi">भादो</span><br>Bhado<br><small>Aug–Sep</small></th><th><span class="hi">आश्विन</span><br>Ashwin<br><small>Sep–Oct</small></th><th><span class="hi">कार्तिक</span><br>Kartik<br><small>Oct–Nov</small></th><th><span class="hi">अगहन</span><br>Aghan<br><small>Nov–Dec</small></th><th><span class="hi">पूस</span><br>Poos<br><small>Dec–Jan</small></th><th><span class="hi">माघ</span><br>Magh<br><small>Jan–Feb</small></th><th><span class="hi">फागुन</span><br>Phagun<br><small>Feb–Mar</small></th><th><span class="hi">चैत्र</span><br>Chaitra<br><small>Mar–Apr</small></th></tr></thead><tbody><tr><th>Dhaan</th><td class="k" title=""></td><td class="kn" title="nursery"></td><td class="ks" title="sowing"></td><td class="ks" title="sowing"></td><td class="kg" title="growing"></td><td class="kg" title="growing"></td><td class="kh" title="harvest"></td><td class="kh" title="harvest"></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td></tr><tr><th>Makai (kharif)</th><td class="k" title=""></td><td class="k" title=""></td><td class="ks" title="sowing"></td><td class="kg" title="growing"></td><td class="kg" title="growing"></td><td class="kh" title="harvest"></td><td class="kh" title="harvest"></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td></tr><tr><th>Gehu</th><td class="kh" title="harvest"></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="ks" title="sowing"></td><td class="ks" title="sowing"></td><td class="kg" title="growing"></td><td class="kg" title="growing"></td><td class="kg" title="growing"></td><td class="kh" title="harvest"></td></tr><tr><th>Sarso</th><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="ks" title="sowing"></td><td class="kg" title="growing"></td><td class="kg" title="growing"></td><td class="kg" title="growing"></td><td class="kh" title="harvest"></td><td class="k" title=""></td></tr><tr><th>Masoor / Chana</th><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="ks" title="sowing"></td><td class="ks" title="sowing"></td><td class="kg" title="growing"></td><td class="kg" title="growing"></td><td class="kh" title="harvest"></td><td class="kh" title="harvest"></td></tr><tr><th>Aloo</th><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="ks" title="sowing"></td><td class="kg" title="growing"></td><td class="kg" title="growing"></td><td class="kh" title="harvest"></td><td class="kh" title="harvest"></td><td class="k" title=""></td></tr><tr><th>Moong (garma)</th><td class="kg" title="growing"></td><td class="kh" title="harvest"></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="ks" title="sowing"></td><td class="ks" title="sowing"></td></tr><tr><th>Tarbuj / Kheera</th><td class="kh" title="harvest"></td><td class="kh" title="harvest"></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="ks" title="sowing"></td><td class="kg" title="growing"></td></tr><tr><th>Ganna</th><td class="kg" title="growing"></td><td class="kg" title="growing"></td><td class="kg" title="growing"></td><td class="kg" title="growing"></td><td class="kg" title="growing"></td><td class="kg" title="growing"></td><td class="kh" title="harvest"></td><td class="kh" title="harvest"></td><td class="kh" title="harvest"></td><td class="kh" title="harvest"></td><td class="kh" title="harvest"></td><td class="ks" title="sowing"></td></tr><tr><th>Aam</th><td class="kg" title="growing"></td><td class="kh" title="harvest"></td><td class="kh" title="harvest"></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="kf" title="flowering"></td><td class="kg" title="growing"></td></tr><tr><th>Litchi</th><td class="kg" title="growing"></td><td class="kh" title="harvest"></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="kg" title="growing"></td></tr><tr><th>Tambaku</th><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="k" title=""></td><td class="ks" title="sowing"></td><td class="ks" title="sowing"></td><td class="kg" title="growing"></td><td class="kg" title="growing"></td><td class="kh" title="harvest"></td><td class="kh" title="harvest"></td><td class="k" title=""></td></tr></tbody></table></div>
+  <div class="legend"><span><i style="background:var(--river2)"></i>sowing / planting</span><span><i style="background:var(--leaf);opacity:.55"></i>growing</span><span><i style="background:var(--saffron)"></i>harvest</span><span><i style="background:var(--river2);opacity:.5"></i>nursery</span><span><i style="background:var(--mango)"></i>flowering (aam ka manjar)</span></div>
+  <p class="note" style="margin-top:.8rem">Months follow the Bihari calendar; the English months shift by a fortnight either way from year to year.</p>
+</div></section>
+
+<section class="band alt" id="pusa"><div class="wrap">
+  <p class="eyebrow">Us paar</p>
+  <h2>The university across the river</h2>
+  <p class="lead">Dr. Rajendra Prasad Central Agricultural University at Pusa is the reason half the varieties on this page carry the names Rajendra and Pusa. The research farm has been on the south bank since 1904; the university since 1970. For Malinagar it is a neighbour more than an institution.</p>
+  <div class="cards">
+    <div class="card"><h3>Seed</h3><p>The university's seed sale counter and the Krishi Vigyan Kendra are where the certified wheat, paddy, mustard and maize seed comes from, and where the potato seed is booked for the cold storage.</p></div>
+    <div class="card"><h3>Advice</h3><p>The KVK's kisan mela in Phagun, the soil-testing lab and the field days are open to any farmer who crosses the bridge. A soil health card tells you what the field actually needs instead of what the dealer sells.</p></div>
+    <div class="card"><h3>Litchi and makhana</h3><p>The National Research Centre on Litchi at Muzaffarpur and the makhana research at Darbhanga are both within an hour; the Shahi litchi grafts and the litchi honey of the district come through them.</p></div>
+    <div class="card"><h3>The mill</h3><p>The Pusa sugar mill takes the village's cane by trolley from Kartik; the Sudha dairy van takes the milk from the chowk every morning. Both pay late, both are still the village's steadiest cash.</p></div>
+  </div>
+</div></section>
+
+<section class="band"><div class="wrap">
+  <p class="eyebrow">Samasya aur rasta</p>
+  <h2>What the farmer worries about</h2>
+  <div class="cards">
+    <div class="card"><h3>Baadh · The flood</h3><p>Some Sawans the Budhi Gandak stays in its banks and the paddy is the best in the district; some years it walks into the chaur and the tolas near the bank move the cattle to the road. The silt it leaves is the same silt that makes next year's wheat.</p></div>
+    <div class="card"><h3>Chhote khet · Small plots</h3><p>Every generation the fields are divided among brothers; a family that farmed ten bighas now farms two in five places. The tractor and the thresher are hired by the hour, and the boring is shared.</p></div>
+    <div class="card"><h3>Mazdoor · Hands</h3><p>The sons are in Delhi and Bengaluru, so ropni and harvest depend on women and on labour from the next village. The combine harvester has started to appear on the big wheat plots.</p></div>
+    <div class="card"><h3>Daam · Price</h3><p>Potato and cauliflower prices swing between loss and windfall; the sugar mill and the dairy pay late. The safest income is the one that never leaves the house: rice, wheat, dal, oil, milk and the gachhi.</p></div>
+  </div>
+</div></section>
+
+<section class="band alt" id="words"><div class="wrap">
+  <p class="eyebrow">Khet ki bhasha</p>
+  <h2>Words of the field</h2>
+  <p class="lead">The vocabulary every Malinagar child knew before school, for those who grew up elsewhere.</p>
+  <div class="gloss"><div><b>हल · बैल</b> · hal, bail: the wooden plough and the bullock pair, now mostly a tractor and a rotavator</div><div><b>आरी</b> · aari: the field bund that holds the paddy water; repaired every Jeth</div><div><b>बिचड़ा · रोपनी</b> · bichda, ropni: the paddy nursery and the transplanting</div><div><b>निकाई</b> · nikai: hand weeding</div><div><b>खलिहान</b> · khalihan: the threshing ground by the tola</div><div><b>दौन</b> · daun: threshing by bullocks walking in a circle over the sheaves</div><div><b>सूप</b> · soop: the bamboo winnowing basket, also the Chhath basket</div><div><b>भूसा · पुआल</b> · bhusa, puaal: wheat chaff and rice straw, the cattle's year</div><div><b>बोरिंग · पंपसेट</b> · boring, pumpset: the tube-well and the diesel or electric pump</div><div><b>उतेरा</b> · utera: broadcasting a pulse into the standing paddy</div><div><b>पेड़ी</b> · peri: the ratoon sugarcane</div><div><b>मचान</b> · machaan: the bamboo platform for vines, and for guarding the gachhi</div><div><b>बारी</b> · baari: the kitchen garden behind the house</div><div><b>गाछी</b> · gachhi: the mango orchard</div><div><b>दियारा</b> · diara: the river's sand bed, where the melons grow</div><div><b>कोल्हू</b> · kolhu: the sugarcane crusher for gur</div><div><b>हँसुआ · गंडासा</b> · hansua, gandasa: the sickle and the cane chopper</div><div><b>बीघा · कट्ठा</b> · bigha, kattha: 1 bigha = 20 kattha; reckoned locally at about 0.6 acre</div><div><b>मन · क्विंटल</b> · maund (40 kg) and quintal (100 kg), the two ways the harvest is counted</div><div><b>गोबर · उपले</b> · gobar, uple: dung for the pit and dung cakes for the chulha</div><div><b>सुधा</b> · Sudha: the COMFED dairy cooperative that collects the village's milk</div><div><b>पूसा हाट</b> · Pusa haat: the Tuesday and Friday market where the vegetables go</div></div>
+</div></section>
+
+<section class="band close"><div class="wrap">
+  <h2>अन्न जहाँ से आता है</h2>
+  <p class="hi">आपके खेत में कुछ और उगता है? कोई पुरानी किस्म, कोई तरीका जो यहाँ छूट गया?<br>बताइए, यह पन्ना उसी से बनेगा।</p>
+  <a class="btn" href="index.html#contact">Send a crop, a variety or a photo</a>
+</div></section>
+
+<footer><div class="wrap">Malinagar – Mera Gaon · <a href="index.html">Home</a> · <a href="parv.html">Parv</a> · <a href="kheti.html">Kheti</a> · <a href="chhath.html">Chhath Ghar Wapsi Fund</a><br>बूढ़ी गंडक के किनारे, जिसे हम आज भी घर कहते हैं।</div></footer>
+</body>
+</html>
